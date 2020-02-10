@@ -18,6 +18,7 @@ RUN \
         php${php_version}-xml \
         php${php_version}-zip \
         wget \
+    && echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
     && apt-get autoremove \
     && apt-get autoclean \
     && apt-get clean \
