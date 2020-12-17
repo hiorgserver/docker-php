@@ -8,8 +8,11 @@ RUN \
     && apt-get update \
     && apt-get -y --no-install-recommends install \
         ca-certificates git curl unzip apt-transport-https \
+        php${php_version}-apcu \
+        php${php_version}-bcmath \
         php${php_version}-cli \
         php${php_version}-curl \
+        php${php_version}-dom \
         php${php_version}-gd \
         php${php_version}-intl \
         php${php_version}-mbstring \
