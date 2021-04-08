@@ -25,6 +25,7 @@ RUN \
         php${php_version}-soap \
         php${php_version}-xml \
         php${php_version}-zip \
+        php${php_version}-dev \
         php-pear \
     && pecl install yaml \
     && rm /etc/localtime && echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
