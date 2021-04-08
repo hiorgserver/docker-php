@@ -25,6 +25,8 @@ RUN \
         php${php_version}-soap \
         php${php_version}-xml \
         php${php_version}-zip \
+        php-pear \
+    && pecl install ext-yaml \
     && rm /etc/localtime && echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
     && apt-get autoremove && apt-get autoclean && apt-get clean \
     && curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin \
