@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN \
-
-	apt-get -y install wget apt-transport-https lsb-release ca-certificates curl \
+	apt-get update \
+	&& apt-get -y install wget apt-transport-https lsb-release ca-certificates curl \
 	&& wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 	&& sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list' \
     && php_version=8.0 \
