@@ -12,6 +12,7 @@ RUN \
     && apt-get update \
     && apt-get -y --no-install-recommends install \
         git unzip \
+        build-essential \
         php${php_version}-apcu \
         php${php_version}-bcmath \
         php${php_version}-cli \
