@@ -3,6 +3,8 @@ FROM debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+COPY yaml.ini /etc/php/8.0/mods-available/yaml.ini
+
 RUN \
 	apt-get update \
 	&& apt-get -y install wget apt-transport-https lsb-release ca-certificates curl \
@@ -27,10 +29,10 @@ RUN \
         php${php_version}-xml \
         php${php_version}-zip \
         php${php_version}-dev \
-        libyaml-0-2 \
         libyaml-dev \
         php-pear \
     && pecl install yaml \
+    && phpenmod -v 8.0 yaml \
     && rm /etc/localtime && echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
     && apt-get autoremove && apt-get autoclean && apt-get clean \
     && curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin \
