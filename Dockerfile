@@ -31,6 +31,7 @@ RUN \
         php${php_version}-dev \
         libyaml-dev \
         php-pear \
+        default-mysql-client \
     && pecl install yaml \
     && phpenmod -v 8.0 yaml \
     && rm /etc/localtime && echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata \
