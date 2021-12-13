@@ -3,7 +3,7 @@ FROM debian:buster-slim
 ENV DEBIAN_FRONTEND noninteractive
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-COPY yaml.ini /etc/php/7.3/mods-available/yaml.ini
+COPY yaml.ini /etc/php/7.4/mods-available/yaml.ini
 
 RUN \
     php_version=7.4 \
